@@ -1,0 +1,102 @@
+/* Basic Reset */
+* {
+    border: 1px solid red;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Header Styling */
+  header {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Hamburger Menu Icon */
+  .menu-icon {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-color: #ffd700;
+    color: crimson;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  /* Footer Styling */
+  footer {
+    background-color: crimson;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+  }
+  
+  footer a {
+    color: yellow;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media Queries for Mobile View */
+  @media (max-width: 768px) {
+    /* Show the hamburger menu on small screens */
+    .menu-icon {
+      display: block;
+    }
+  
+    /* Hide navigation links by default */
+    #nav-list {
+      display: none;
+      width: 100%;
+      background-color: crimson;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 10px 0;
+      text-align: center;
+    }
+  
+    /* Show nav links when the menu is active */
+    #nav-list.active {
+      display: block;
+    }
+  
+    /* Stack the navigation items vertically */
+    #nav-list li {
+      margin: 10px 0;
+    }
+  }
+  
