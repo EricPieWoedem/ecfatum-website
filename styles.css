@@ -22,10 +22,10 @@
   }
   /* Header Styling */
   header {
-    background-color: rgb(247, 244, 245);
+    background-color: rgb(255, 255, 255);
     color: rgb(57, 15, 15);
     padding: 20px;
-    margin-bottom: 	50px;
+    /* margin-bottom: 	50px; */
     border-bottom:1px solid #d7d7d7;
     display: flex;
     justify-content: space-between;
@@ -56,7 +56,7 @@
   
   /* Hero Section */
   .hero {
-    background-color: #ffd700;
+    background-color: #fffdf0;
     color: crimson;
     text-align: center;
     padding: 50px 20px;
