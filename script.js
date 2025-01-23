@@ -1,9 +1,32 @@
-// Get the hamburger menu and navigation list elements
-const menuIcon = document.querySelector('#menu-icon');
-const navList = document.querySelector('#nav-list');
+function createBook (title, author, pages) {
+    let read = false; 
 
-// Add a click event listener to the hamburger menu
-menuIcon.addEventListener('click', function () {
-  // Toggle the 'active' class on the navigation list
-  navList.classList.toggle('active');
-});
+    return {
+        title,
+        author,
+        pages,
+        toggleReadStatus () {
+            read = !read;
+        },
+        getInfo () {
+            return `${title} by ${author}, ${pages} pages, ${read ? "Read" : "Not read"}`
+        }
+     };
+} 
+
+const libraryModule = (() => {
+    const books = [];
+    
+    return {
+        addBook (title, author, pages) {
+            const book = createBook (title, author, pages);
+            books.push(book);
+        },
+        listBooks () {
+            return books.map(book =>book.getInfo());
+        }
+    }
+})();
+
+libraryModule.addBook ("1984", "George Owell", 286, true);
+console.log(libraryModule.listBooks());
