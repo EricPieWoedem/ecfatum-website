@@ -8,8 +8,10 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <h1>Ecfatum</h1>
+      <div class="logo">
+        <img src="images/Ecfatum Logo.png" alt="Ecfatum Logo" />
+      </div>
+      <div class="header-container">
         <nav>
           <ul>
             <li><a href="#home">Home</a></li>
@@ -18,6 +20,11 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact Us</a></li>
           </ul>
+          <button class="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </nav>
       </div>
     </header>
@@ -28,7 +35,7 @@
         <a href="#contact" class="cta-btn">Get in Touch</a>
       </section>
 
-      <section id="about" class="about">
+      <section id="about" class="about" data-animate>
         <div class="container">
           <h2>About Us</h2>
           <p>
@@ -52,7 +59,7 @@
         </div>
       </section>
 
-      <section id="services" class="services">
+      <section id="services" class="services" data-animate>
         <div class="container">
           <h2>Our Services</h2>
           <div class="service-cards">
@@ -88,7 +95,7 @@
         </div>
       </section>
 
-      <section id="projects" class="projects-carousel">
+      <section id="projects" class="projects-carousel" data-animate>
         <div class="container">
           <h2>Our Projects</h2>
           <div class="carousel">
@@ -128,7 +135,7 @@
         </div>
       </section>
 
-      <section id="contact" class="contact">
+      <section id="contact" class="contact" data-animate>
         <div class="container">
           <h2>Contact Us</h2>
           <p>Let’s build the future together.</p>
@@ -192,6 +199,9 @@
         <p>&copy; 2025 Ecfatum Limited. All rights reserved.</p>
       </div>
     </footer>
+
+    <button id="backToTop" title="Back to Top">↑</button>
+
     <script src="js/script.js"></script>
   </body>
 </html>
