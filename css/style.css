@@ -188,79 +188,117 @@ footer a:hover {
   }
 }
 
-/* Projects Section */
-.projects {
-  background: #fff; /* White background */
+/* Projects Carousel Section */
+.projects-carousel {
+  background: #f5f5f5;
   padding: 4em 1em;
 }
 
-.projects h2 {
-  color: #1A1A40; /* Deep Navy */
+.projects-carousel h2 {
   text-align: center;
+  color: #1a1a40;
   margin-bottom: 1.5em;
-  font-size: 2.5em;
 }
 
-.project-cards {
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+}
+
+.carousel-track {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2em;
+  transition: transform 0.5s ease-in-out;
 }
 
-.project-card {
-  background: #f5f5f5; /* Light Gray background */
-  padding: 2em;
-  width: calc(25% - 2em);
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.carousel-slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.project-info {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.project-info h3 {
+  color: #1a1a40;
+  font-size: 1.5em;
+}
+
+.project-info p {
+  font-size: 1em;
+  color: #333;
+}
+
+/* Navigation Arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(26, 26, 64, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+.carousel-btn:hover {
+  background: #d4af37;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Indicators */
+.carousel-nav {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.carousel-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: #d4af37;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.project-card h3 {
-  color: #1A1A40; /* Deep Navy */
-  font-size: 1.8em;
-  margin-bottom: 0.8em;
+.carousel-indicator:hover {
+  transform: scale(1.2);
 }
 
-.project-card p {
-  color: #333;
-  font-size: 1.1em;
-  line-height: 1.6;
+.carousel-indicator.current {
+  background: #1a1a40;
 }
 
-.project-btn {
-  display: inline-block;
-  padding: 0.8em 1.5em;
-  background: #D4AF37; /* Soft Gold */
-  color: #1A1A40; /* Deep Navy */
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  margin-top: 1em;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.project-btn:hover {
-  background: #B68F3A; /* Slightly darker gold */
-  color: white;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-}
-
-@media (max-width: 768px) {
-  .project-card {
-    width: calc(50% - 1.5em); /* Adjust for medium screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .project-card {
-    width: 100%; /* Stack vertically on small screens */
-  }
-}
 
 /* Contact Us Section */
 .contact {
