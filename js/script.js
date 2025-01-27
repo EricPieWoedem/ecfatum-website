@@ -1,25 +1,67 @@
-// Hamburger sign
-// Select the hamburger button and the navigation menu
+// Select elements
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('nav ul');
-const link =document.querySelectorAll('li')
 
-// Toggle the "active" class on the hamburger and nav menu when clicked
+// Toggle the menu when the hamburger is clicked
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active'); // Animate the hamburger icon
-  navMenu.classList.toggle('active');
-  const active = document.querySelector('active'); // Show or hide the menu
+  hamburger.classList.toggle('active'); // Change hamburger to "X"
+  navMenu.classList.toggle('open'); // Slide menu in/out
 });
 
-// smooth scrolling
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+// Close the menu when clicking on a link
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('open');
   });
 });
+
+// Close the menu when clicking outside of it
+document.addEventListener('click', (event) => {
+  const isClickInsideMenu = navMenu.contains(event.target);
+  const isClickOnHamburger = hamburger.contains(event.target);
+
+  if (!isClickInsideMenu && !isClickOnHamburger) {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('open');
+  }
+});
+
+let currentIndex = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const totalSlides = slides.length;
+const textArray = [
+  'Smart Solutions for Smart Problems',
+  'Smart Solutions for Smart Problems',
+  'Smart Solutions for Smart Problems',
+  'Smart Solutions for Smart Problems'
+]; // Array with your slogans
+
+const textElement = document.querySelector('.hero-text'); // Get the hero text element
+
+function showNextSlide() {
+  // Fade out the current slide
+  slides[currentIndex].style.opacity = 0;
+  slides[currentIndex].style.visibility = 'hidden';
+
+  // Update the current index
+  currentIndex = (currentIndex + 1) % totalSlides;
+
+  // Fade in the next slide
+  slides[currentIndex].style.opacity = 1;
+  slides[currentIndex].style.visibility = 'visible';
+
+  // Update the text content
+  textElement.textContent = textArray[currentIndex];
+}
+
+// Start the image and text rotation every 5 seconds
+setInterval(showNextSlide, 5000);
+
+// Show the first slide and text immediately
+slides[currentIndex].style.opacity = 1;
+slides[currentIndex].style.visibility = 'visible';
+textElement.textContent = textArray[currentIndex]; // Set initial text
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
