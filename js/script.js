@@ -1,3 +1,4 @@
+// HAMBURGER
 // Select elements
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('nav ul');
@@ -27,54 +28,30 @@ document.addEventListener('click', (event) => {
   }
 });
 
+// HERO SECTION
 let currentIndex = 0;
-const slides = document.querySelectorAll('.hero-slide');
+const slides = document.querySelectorAll(".hero-slide");
 const totalSlides = slides.length;
-const textArray = [
-  'Smart Solutions for Smart Problems',
-  'Smart Solutions for Smart Problems',
-  'Smart Solutions for Smart Problems',
-  'Smart Solutions for Smart Problems'
-]; // Array with your slogans
 
-const textElement = document.querySelector('.hero-text'); // Get the hero text element
-
+// Function to show the next slide
 function showNextSlide() {
-  // Fade out the current slide
-  slides[currentIndex].style.opacity = 0;
-  slides[currentIndex].style.visibility = 'hidden';
+  // Remove 'active' class from the current slide
+  slides[currentIndex].classList.remove("active");
 
-  // Update the current index
+  // Update the index for the next slide
   currentIndex = (currentIndex + 1) % totalSlides;
 
-  // Fade in the next slide
-  slides[currentIndex].style.opacity = 1;
-  slides[currentIndex].style.visibility = 'visible';
-
-  // Update the text content
-  textElement.textContent = textArray[currentIndex];
+  // Add 'active' class to the next slide
+  slides[currentIndex].classList.add("active");
 }
 
-// Start the image and text rotation every 5 seconds
-setInterval(showNextSlide, 5000);
+// Start the slideshow
+setInterval(showNextSlide, 5000); 
 
-// Show the first slide and text immediately
-slides[currentIndex].style.opacity = 1;
-slides[currentIndex].style.visibility = 'visible';
-textElement.textContent = textArray[currentIndex]; // Set initial text
+// Show the first slide immediately
+slides[currentIndex].classList.add("active");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-    }
-  });
-});
-
-document.querySelectorAll('[data-animate]').forEach(el => {
-  observer.observe(el);
-});
-
+// BACK TO TOP BUTTON
 // Back to top button
 const backToTop = document.getElementById('backToTop');
 
@@ -95,8 +72,20 @@ backToTop.addEventListener('click', () => {
   });
 });
 
+// ABOUT US SEE MORE
+document.addEventListener("DOMContentLoaded", function () {
+  const seeMoreBtn = document.querySelector(".see-more-btn");
+  const moreContent = document.querySelector(".more-content");
 
+  seeMoreBtn.addEventListener("click", function () {
+    moreContent.classList.toggle("show"); // Toggle visibility
+    seeMoreBtn.innerHTML = moreContent.classList.contains("show")
+      ? 'See Less'
+      : 'See More';
+  });
+});
 
+// CAROUSEL
 // carousel
 document.addEventListener("DOMContentLoaded", function () {
   const prevBtn = document.querySelector(".carousel-btn.prev");
