@@ -22,11 +22,68 @@ body {
   margin: 0 auto;
 }
 
+.media {
+  background: #1a1a40; 
+  color: #D4AF37; 
+  display: flex;
+  padding: 1em 4em;
+  justify-content: space-between;
+}
+
+.media svg {
+  height: 24px;
+  width: 24px;
+  fill: #D4AF37;
+}
+
+.left {
+  display: flex;
+  gap: 2em;
+}
+
+ .tel {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0;
+ }
+
+ .tel > p, .tel svg {
+  height: 100%;
+ }
+
+ .socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3em;
+ }
+
+ .socials a {
+  display: flex;
+  align-items: center;
+  transition: transform 0.1s ease;
+ }
+
+ .socials a:hover {
+  transform: scale(1.3);
+ }
+
+ @media (max-width: 768px) {
+  .left {
+    display: none;
+  }
+  .media {
+    justify-content: center;
+  }
+}
+
+ 
 /* Header */
 header {
-  background: rgba(26, 26, 64); 
+  background: #1a1a40; 
   color: white;
-  padding: 1em 0;
+  padding: 1em 2.5em;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -39,7 +96,7 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #1a1a40;
-  width: 15%;
+  width: 20%;
   height: 100%;
   margin-left: 10px;
 }
@@ -116,7 +173,6 @@ nav a:hover::after {
   transform-origin: 3px;
 }
 
-/* Change icon to an "X" when menu is active */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg);
 }
@@ -129,7 +185,6 @@ nav a:hover::after {
   transform: rotate(-45deg);
 }
 
-/* Responsive: Show hamburger and apply slide-in effect for nav menu */
 @media screen and (max-width: 768px) {
   .hamburger {
     display: flex; 
@@ -217,18 +272,13 @@ nav a:hover::after {
   margin-bottom: 10px;
 }
 
-/* .sol {
-    background: linear-gradient(90deg, #D4AF37,#d40000); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-} */
-
 .sol {
-  background: linear-gradient(90deg, #d40000, #D4AF37, #3c3cca, #2626c2);
+  background: linear-gradient(90deg, #d40000, #D4AF37, #488ce6, #2626c2);
   background-size: 300% 300%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientMove 3s infinite linear;
+  animation: gradientMove 4s infinite linear;
 }
 
 @keyframes gradientMove {
@@ -236,7 +286,6 @@ nav a:hover::after {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 
 .hero-text p {
   font-size: 1.2rem; 
@@ -290,7 +339,7 @@ nav a:hover::after {
 
 .cta-btn:hover svg {
   opacity: 1;
-  transform: translateX(0); /* Move arrow into place */
+  transform: translateX(0); 
 }
 
 /* Footer */
@@ -316,41 +365,44 @@ footer a:hover {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: crimson;
-  color: white;
+  background-color: #d8e0fc;
+  fill: #1A1A40;
   border: none;
   border-radius: 50%;
   padding: 10px 15px;
   font-size: 18px;
   cursor: pointer;
-  opacity: 0; /* Start as invisible */
-  transform: translateY(20px); /* Start slightly below */
-  pointer-events: none; /* Prevent clicks when hidden */
+  opacity: 0; 
+  transform: translateY(20px); 
+  pointer-events: none; 
   z-index: 100;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth appearance */
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+#backToTop svg {
+   width: 24px;
+   height: 28px;
 }
 
 #backToTop.visible {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Move to its final position */
-  pointer-events: auto; /* Enable clicks when visible */
+  opacity: 1; 
+  transform: translateY(0); 
+  pointer-events: auto; 
 }
 
 #backToTop:hover {
-  background-color: yellow;
-  color: crimson;
+  background-color: #b6c5fa;
 }
 
 
 /* About Section */
 .about {
-  background: #F5F5F5; /* Light Gray */
+  background: #F5F5F5; 
   padding: 3em 1em;
 }
 
 .about h2 {
-  color: #1A1A40; /* Deep Navy */
+  color: #1A1A40;
   text-align: center;
   margin-bottom: 1em;
   font-size: 2em;
@@ -397,22 +449,59 @@ footer a:hover {
 
 /* Services Section */
 .services {
-  background: #fff; /* White background */
-  padding: 4em 1em;
+    position: relative;
+    background: url('../images/1.png') center/cover no-repeat;
+    padding: 4em 1em;
+    color: white; 
+    z-index: 1;
+}
+
+.services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 7, 39, 0.9) ;
+  z-index: -1;
 }
 
 .services svg {
-  width: 18%;
-  height: 18%;
-  fill: #242468;
+  width: 17%;
+  height: 17%;
   margin-bottom: 1.5em;
 }
 
+.svg1 {
+
+  fill: #920101;
+}
+
+.svg2 {
+  fill: #5a1a85;
+}
+
+.svg3 {
+  fill: #D4AF37;
+}
+
+.svg4 {
+  fill: #006400;
+}
+
+.svg5 {
+  fill: #000000;
+}
+
+.svg6 {
+  fill: #1a1a81;
+}
 .services h2 {
-  color: #1A1A40; /* Deep Navy */
+  color: #fff;
   text-align: center;
   margin-bottom: 1.5em;
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 .service-cards {
@@ -426,13 +515,13 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f5f5f5; 
+  background: #e7e8fa; 
   text-align: center;
   padding: 2em;
-  width: 40%;
+  width: calc(33.33% - 1em);
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  
 }
 
 .service-card:hover {
@@ -440,50 +529,73 @@ footer a:hover {
 }
 
 .service-card h4 {
-  color: #1A1A40; /* Deep Navy */
+  color: #1A1A40; 
   font-size: 1.5em;
   margin-bottom: 0.8em;
 }
-
+                               
 .service-card p {
   color: #333;
   font-size: 1em;
   line-height: 1.6;
 }
 
-.service-card:hover {
-  /* transform: translateY(-10px); */
-}
-
 .services-desc {
-  text-align: center;
-  /* width: 80%; */
+  text-align: justify;
   margin: 1em 6em;
   padding: 0;
 }
 
-@media (max-width: 768px) {
-  .service-card {
-    width: calc(50% - 1.5em); /* Adjust for medium screens */
-  }
+  @media (max-width: 768px) {
+    .service-card {
+        width: 48%;
+    }
 }
 
 @media (max-width: 480px) {
   .service-card {
-    width: 100%; /* Stack vertically on small screens */
+    width: 100%; 
   }
 }
 
-/* Projects Carousel Section */
-.projects-carousel {
-  background: #f5f5f5;
+/* Priojects Section */
+.project-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5em;
+  width: 100%;
+  padding-bottom: 3em;
+}
+
+.projects h2 {
+  color: #1A1A40;
+  text-align: center;
+  padding-top: 2.5em;
+  font-size: 2em;
+}
+
+.project-card {
+  width: calc(25% - 1em);
+  height: calc(33.3% - 1em);
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Partners Section */
+.partners-carousel {
+  color: #f5f5f5;
   padding: 4em 1em;
 }
 
-.projects-carousel h2 {
+.partners-carousel h2 {
   text-align: center;
-  color: #1a1a40;
-  margin-bottom: 1.5em;
+  color: #1A1A40;
+  margin: 1.5em auto;
+  font-size: 2em;
 }
 
 .carousel {
@@ -498,6 +610,7 @@ footer a:hover {
 
 .carousel-track {
   display: flex;
+  align-items: center;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -508,32 +621,16 @@ footer a:hover {
 }
 
 .carousel-slide img {
-  max-width: 100%;
+  width: 60%;
   height: auto;
   border-radius: 10px;
-}
-
-.project-info {
-  margin-top: 1em;
-  text-align: center;
-}
-
-.project-info h3 {
-  color: #1a1a40;
-  font-size: 1.5em;
-}
-
-.project-info p {
-  font-size: 1em;
-  color: #333;
 }
 
 /* Navigation Arrows */
 .carousel-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background: rgba(26, 26, 64, 0.8);
+  background: #1A1A40;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -547,29 +644,40 @@ footer a:hover {
   z-index: 1;
 }
 
-.carousel-btn:hover {
-  background: #d4af37;
+.carousel-btn svg {
+  fill:#d4af37 ;
 }
 
 .carousel-btn.prev {
-  left: 10px;
+  left: 1.5em;
+  transition: transform 0.3s ease;
+}
+
+.carousel-btn.prev:hover {
+  transform: translateX(-3px) scale(1.1);
 }
 
 .carousel-btn.next {
-  right: 10px;
+  right: 1.5em;
+  transition: transform 0.3s ease;
+}
+
+
+.carousel-btn.next:hover {
+  transform: translateX(5px) scale(1.1);
 }
 
 /* Indicators */
 .carousel-nav {
   text-align: center;
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 .carousel-indicator {
   display: inline-block;
   width: 12px;
   height: 12px;
-  margin: 0 5px;
+  margin: 0 0.4em;
   background: #d4af37;
   border-radius: 50%;
   border: none;
@@ -585,48 +693,53 @@ footer a:hover {
   background: #1a1a40;
 }
 
-
 /* Contact Us Section */
 .contact {
-  background: #f5f5f5; /* Light Gray */
+  position: relative;
+  background: url('../images/1.png') center/cover no-repeat;
   padding: 4em 1em;
+  color: white; 
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 7, 39, 0.9) 
 }
 
 .contact .container {
-  max-width: 1000px;
+  position: relative; 
+  /* max-width: 1000px; */
   margin: 0 auto;
   text-align: center;
+  z-index: 1;
 }
 
 .contact h2 {
-  color: #1a1a40; /* Deep Navy */
+  color: #FFF;
   font-size: 2em;
   margin-bottom: 1em;
 }
 
-.contact-info {
-  margin-bottom: 2em;
+.contact-grid {
+  width: 100%;
+  display: flex;
+  margin-top: 3em;
+  justify-content: space-between;
+  
 }
 
-.contact-info p {
-  font-size: 1.1em;
-  color: #333; /* Dark Gray */
-  line-height: 1.8;
-}
-
-.contact-info a {
-  color: #1a1a40; /* Deep Navy */
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.contact-info a:hover {
-  color: #d4af37; /* Soft Gold */
+.contact-details {
+  flex: 2;
 }
 
 /* Contact Form */
 .contact-form {
-  background: white;
+  flex: 3;
   padding: 2em;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -650,12 +763,12 @@ footer a:hover {
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #d4af37; /* Soft Gold */
+  border-color: #d4af37; 
   box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
 }
 
 .contact-form button {
-  background: #1a1a40; /* Deep Navy */
+  background: #d4af37; 
   color: white;
   padding: 0.8em 1.5em;
   border: none;
@@ -666,8 +779,8 @@ footer a:hover {
 }
 
 .contact-form button:hover {
-  background: #d4af37; /* Soft Gold */
-  color: #1a1a40; /* Deep Navy */
+  background: #d4af37; 
+  color: #1a1a40; 
 }
 
 
