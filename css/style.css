@@ -3,7 +3,7 @@ html {
 }
 
 * {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -330,8 +330,7 @@ nav a:hover::after {
 }
 
   .hero-text p {
-    font-size: 16px;
-    /* display: none; */
+    font-size: 14px;
   }
 }
 
@@ -483,8 +482,8 @@ footer a:hover {
     font-size: 22px;
   }
 
-  .about p {
-    font-size: 16px;
+  .about p, .see-more-btn {
+    font-size: 14px;
   }
 }
 
@@ -627,13 +626,6 @@ footer a:hover {
   padding: 1em;
 }
 
-.projects h2 {
-  color: #1A1A40;
-  text-align: center;
-  padding-top: 1.5em;
-  font-size: 2em;
-}
-
 .project-card {
   width: calc(25% - 1em);
   height: calc(33.3% - 1em);
@@ -642,12 +634,6 @@ footer a:hover {
 .project-card img {
   width: 100%;
   height: 100%;
-}
-
-@media(max-width: 768px) {
-.projects h2 {
-  font-size: 22px;
-} 
 }
 
 /* Partners Section */
@@ -688,7 +674,6 @@ footer a:hover {
 .carousel-slide img {
   width: 60%;
   height: auto;
-  border-radius: 10px;
 }
 
 /* Navigation Arrows */
@@ -795,7 +780,6 @@ footer a:hover {
 
 .contact .container {
   position: relative; 
-  /* max-width: 1000px; */
   margin: 0 auto;
   text-align: center;
   z-index: 1;
@@ -822,9 +806,8 @@ footer a:hover {
 /* Contact Form */
 .contact-form {
   flex: 3;
-  padding: 2em;
+  /* padding: 2em; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
 }
 
 .contact-form form {
@@ -838,7 +821,7 @@ footer a:hover {
   width: 100%;
   padding: 1em;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   font-size: 1em;
 }
 
