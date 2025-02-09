@@ -3,7 +3,7 @@ html {
 }
 
 * {
-  /* border: 1px solid red; */
+ /* border: 1px solid red;  */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -145,7 +145,7 @@ nav li {
 nav a {
   color: #D4AF37; 
   text-decoration: none;
-  font-weight: bold ;
+  font-weight: 500;
   position: relative;
   transition: color 0.2s ease;
 }
@@ -225,11 +225,12 @@ nav a:hover::after {
   }
 
   nav li {
-    margin: 15px 0; 
+    margin: 10px 0; 
   }
 
   nav a {
-    font-size: 18px;
+    font-size: 14px;
+    font-weight: 400;
     text-align: center;
     display: block; 
     color: #d4af37; 
@@ -439,8 +440,15 @@ footer a:hover {
   font-size: 2em;
 }
 
+.about h3 {
+  border-left: 12px solid #d40000;
+  padding-left: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+
 .about p {
-  margin-bottom: 1.5em;
+  margin-bottom: 2.5em;
   font-size: 1em;
   line-height: 1.8;
   color: #333; 
@@ -452,6 +460,12 @@ footer a:hover {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .about h3 {
+    font-size: 16px;
+  }
+}
+
 /* see more */
 .more-content {
   max-height: 0;
@@ -461,7 +475,7 @@ footer a:hover {
 }
 
 .more-content.show {
-  max-height: 500px; 
+  max-height: 1500px; 
   opacity: 1;
 }
 
@@ -794,6 +808,7 @@ footer a:hover {
 .contact-grid {
   width: 100%;
   display: flex;
+  gap: 2em;
   margin-top: 3em;
   justify-content: space-between;
   
@@ -801,12 +816,33 @@ footer a:hover {
 
 .contact-details {
   flex: 2;
+  padding-top: 2.5em;
+  text-align: left;
+  font-size: 1em;
+}
+
+.contact-details  .socials {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6em;
+}
+
+.socials-bottom {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 2em;
+}
+
+.socials-bottom svg {
+  width: 24px;
+  height: 24px;
+  fill: #f5f5f5;
 }
 
 /* Contact Form */
 .contact-form {
   flex: 3;
-  /* padding: 2em; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -820,8 +856,8 @@ footer a:hover {
 .contact-form textarea {
   width: 100%;
   padding: 1em;
-  border: 1px solid #ccc;
-  /* border-radius: 5px; */
+  border: 2px solid #ccc;
+  border-radius: 5px;
   font-size: 1em;
 }
 
@@ -832,9 +868,13 @@ footer a:hover {
   box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
 }
 
+.contact-form label {
+color: #F5F5F5;
+}
+
 .contact-form button {
   background: #d4af37; 
-  color: white;
+  color: #1a1a40; 
   padding: 0.8em 1.5em;
   border: none;
   border-radius: 5px;
@@ -844,8 +884,72 @@ footer a:hover {
 }
 
 .contact-form button:hover {
-  background: #d4af37; 
-  color: #1a1a40; 
+  background: #997f28; 
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8em;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+  margin-bottom: 1.5em;
+}
+
+.detail svg {
+  fill: #F5F5F5;
+  width: 32px;
+  height: 32px;
+}
+
+.detail p {
+  text-align: center;
+  color:#f5f5f5
+}
+
+@media (max-width: 768px) {
+  .contact h2 {
+    font-size: 22px;
+  }
+
+  .contact-text {
+    font-size: 14px;
+  }
+
+  .contact-grid {
+    flex-direction: column-reverse;
+  }
+
+  .contact-form input,
+  .contact-form textarea, .contact-form label {
+  font-size: 14px;
+  }
+  
+  .detail svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .detail p {
+    font-size: 14px;
+  }
+  .contact-details {
+    padding-top: 1em;
+  }
+
+  .socials-bottom-text {
+    font-size: 14px;
+  }
+
+  .socials-bottom svg {
+    width: 20px;
+    height: 20px;
+  }
+}
 
