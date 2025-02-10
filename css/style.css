@@ -330,7 +330,7 @@ nav a:hover::after {
 }
 
 .sol {
-  background: linear-gradient(90deg, #d40000, #D4AF37, #737bdb, #1a1d40);
+  background: linear-gradient(90deg, var(--red500), var(--yellow500), var(--blue100), var(--blue500));
   background-size: 300% 300%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -346,7 +346,7 @@ nav a:hover::after {
 
 .hero-text p {
   font-size: 1.2em; 
-  font-family: 'soraextralight';
+  font-family: 'soraregular';
 }
 
 .hero::after {
@@ -538,7 +538,7 @@ footer {
 /* Services Section */
 .services {
     position: relative;
-    background: url('../images/1.png') center/cover no-repeat;
+    background: url('../images/3.jpg') center/cover no-repeat;
     padding: 4em 1em;
     z-index: 1;
 }
